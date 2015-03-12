@@ -38,7 +38,12 @@ include 'conexion.php';
 
         <div class="main-container">
             <div class="main wrapper clearfix">
-
+                
+                <div id="random">
+                    <button value="aleatorio">Genera</button> 
+                    <div id="random-resultado"></div>
+                </div>
+                
                 <table> 
                     <thead> 
                         <tr> 
@@ -70,6 +75,9 @@ include 'conexion.php';
                     </tbody>
                 </table>
 
+                <!-- botón scroll up -->
+                <a href="#" id="scrollToTop"></a>
+
             </div> <!-- #main -->
         </div> <!-- #main-container -->
 
@@ -87,6 +95,41 @@ include 'conexion.php';
             e.src='//www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('button').click(function(){
+
+                    //se guarda el valor del botón
+                    var clickBtnValue = $(this).val();
+                    
+                    //en data se almacena el lanzador, en este caso el objeto "action" que contiene 'aleatorio'
+                    data = {"action": clickBtnValue};
+                    
+                    $.post("genera-aleatorio.php", data, function(data){
+                        // primero vaciar
+                        $("#random-resultado").empty();
+                        // mostrar resultado
+                        $("#random-resultado").html(data);
+                    });
+
+                });
+
+                //Check to see if the window is top if not then display button
+                $(window).scroll(function(){
+                    if ($(this).scrollTop() > 100) {
+                        $('#scrollToTop').fadeIn();
+                    } else {
+                        $('#scrollToTop').fadeOut();
+                    }
+                });
+                
+                //Click event to scroll to top
+                $('#scrollToTop').click(function(){
+                    $('html, body').animate({scrollTop : 0},800);
+                    return false;
+                });
+            });
         </script>
     </body>
 </html>

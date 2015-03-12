@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 30-12-2014 a las 00:22:18
+-- Tiempo de generación: 12-03-2015 a las 22:45:30
 -- Versión del servidor: 5.6.19-0ubuntu0.14.04.1
--- Versión de PHP: 5.5.9-1ubuntu4.5
+-- Versión de PHP: 5.5.9-1ubuntu4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `PELICULAS` (
   PRIMARY KEY (`id_pelicula`),
   KEY `fk_generos` (`id_genero`),
   KEY `titulo` (`titulo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=243 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=249 ;
 
 --
 -- Volcado de datos para la tabla `PELICULAS`
@@ -203,7 +203,7 @@ INSERT INTO `PELICULAS` (`id_pelicula`, `titulo`, `year`, `duracion`, `director`
 (120, 'Indiana Jones y el templo maldito', 1984, 118, 'Steven Spielberg', 2),
 (121, 'Indiana Jones en busca del arca perdida', 1981, 115, 'Steven Spielberg', 2),
 (122, 'Indiana Jones y la Ãºltima cruzada', 1989, 127, 'Steven Spielberg', 2),
-(123, 'Invitus', 2009, 134, 'Clint Eastwood', 4),
+(123, 'Invictus', 2009, 134, 'Clint Eastwood', 4),
 (124, 'Sin perdÃ³n', 1992, 131, 'Clint Eastwood', 19),
 (125, 'Million dollar baby', 2004, 132, 'Clint Eastwood', 8),
 (126, 'John Rambo', 2008, 92, 'Sylvester Stallone', 0),
@@ -322,7 +322,13 @@ INSERT INTO `PELICULAS` (`id_pelicula`, `titulo`, `year`, `duracion`, `director`
 (239, 'Apocalypto', 2006, 139, 'Mel Gibson', 2),
 (240, 'El imperio del sol', 1987, 153, 'Steven Spielberg', 8),
 (241, 'Los mundos de Coraline', 2009, 100, 'Henry Selick', 3),
-(242, 'Seven', 1995, 127, 'David Fincher', 17);
+(242, 'Seven', 1995, 127, 'David Fincher', 17),
+(243, 'Balto', 1995, 78, 'Simon Wells', 3),
+(244, 'El viento se levanta', 2013, 126, 'Hayao Miyazaki', 3),
+(245, 'El Hobbit: La desolaciÃ³n de Smaug (ext.)', 2013, 186, 'Peter Jackson', 20),
+(246, 'Conan, el bÃ¡rbaro', 1982, 129, 'John Milius', 20),
+(247, 'Amadeus', 1984, 160, 'Milos Forman', 4),
+(248, 'El show de Truman', 1998, 103, 'Peter Weir', 8);
 
 --
 -- Restricciones para tablas volcadas

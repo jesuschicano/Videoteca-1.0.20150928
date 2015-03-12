@@ -228,12 +228,44 @@ table tr th, table tr td {
     text-align: left;
 }
 
+/*  BOTÓN GENERAR */
+#random button{
+    position: relative;
+    left: 45%;
+    color: white;
+    font-weight: bold;
+    background: #0046FF;
+    padding: 20px 2%;
+    margin: 1%;
+    border: none;
+    box-shadow: 3px 3px 5px #333333;
+}
 
+/* TEXTO GENERADO */
+#random-resultado{
+    text-align: center;
+    margin: 1%;
+    background: #DB5A3C;
+    border: 1px solid #9C9C9C;
+    border-radius: 3px;
+    color: white;   
+}
 
-
-
-
-
+/* BOTÓN SCROLL TOP */
+#scrollToTop{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: url('../arrowup.png') no-repeat;
+    width: 64px;
+    height: 64px;
+    display: none;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+}
+#scrollToTop:hover{
+    background-color: #0F61FF;
+}
 
 /* ==========================================================================
    Media Queries

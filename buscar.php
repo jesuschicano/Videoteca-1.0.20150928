@@ -14,6 +14,9 @@
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/main.js"></script>
+        <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -35,11 +38,10 @@
 
         <div class="main-container">
             <div class="main wrapper clearfix">
-
-                <form action="" method="POST" name="f-busqueda">
+                <form role="form" method="POST">
                     <div>
                         <label for="">Búsqueda por título
-                            <input type="text" placeholder="Ej: 'star wars'" name="busqueda-titulo"/>
+                            <input type="text" placeholder="Ej: 'star wars'" id="keyword" name="busqueda-titulo"/>
                         </label>
                     </div>
                     <div>
@@ -69,38 +71,42 @@
                     </div>
                 </form>
 
-                <table> 
+                <table id="tabla-resultados"> 
                     <thead> 
                         <tr> 
                             <th width="300">Título</th>  
                             <th width="200">Director</th> 
                             <th width="100">Año</th>
                             <th width="100">Duración</th>
-                            <th width="150">Género</th>
                         </tr>
                     </thead>
                     <tbody>
-                        
+
                     </tbody>
                 </table>
 
             </div> <!-- #main -->
         </div> <!-- #main-container -->
 
+        <script type="text/javascript">
+        	$(document).ready(function() {
+        		$('#keyword').on('input', function() {
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
-
-        <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
+        			var searchKeyword = $(this).val();
+                    
+                    data = {"keywords": searchKeyword};
+    				
+                    if (searchKeyword.length >= 1) {
+						$.post('busqueda-ajax.php', data, function(data) {
+							$('#tabla-resultados tbody').empty();
+							$.each(data, function() {
+								$('#tabla-resultados tbody').append('<tr><td>' + this.titulo + '</td><td>' + this.director + '</td><td>' + this.year + '</td><td>' + this.duracion + '</td></tr>');
+							});
+						}, "json");
+					}
+                    
+        		});
+        	});
         </script>
     </body>
 </html>
