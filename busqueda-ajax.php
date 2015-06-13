@@ -1,6 +1,6 @@
 <?php
 define('DB_USER', 'root');
-define('DB_PASSWORD', 'chiwy');
+define('DB_PASSWORD', 'jesus');
 define('DB_SERVER', 'localhost');
 define('DB_NAME', 'videoteca');
 
@@ -10,10 +10,10 @@ if(!$db = new mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME)){
 
 $arr = array();//array vacio
 if (!empty($_POST['keywords'])) {
-	
+
 	$keywords = serialize($_POST['keywords']);
 	$keywords = $db->real_escape_string($_POST['keywords']);
-	
+
 	$sql = "SELECT * FROM PELICULAS WHERE titulo LIKE '%" . $keywords . "%'";
 	$result = $db->query($sql) or die ($mysqli->error);
 	if ($result->num_rows > 0) {

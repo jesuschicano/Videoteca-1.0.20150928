@@ -10,7 +10,7 @@
 function conectaDb(){
 	$dbname = 'videoteca';
 	$user = 'root';
-	$pass = 'chiwy';
+	$pass = 'jesus';
 
 	try{
 		$db = new PDO("mysql:host=localhost;dbname=".$dbname, $user, $pass);
