@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 28-08-2015 a las 20:52:28
+-- Tiempo de generación: 28-08-2015 a las 21:08:00
 -- Versión del servidor: 5.5.44-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.28-1+deb.sury.org~trusty+1
 
@@ -19,6 +19,44 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `videoteca`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `GENEROS`
+--
+
+CREATE TABLE IF NOT EXISTS `GENEROS` (
+  `id_genero` int(11) NOT NULL AUTO_INCREMENT,
+  `genero` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id_genero`),
+  KEY `genero` (`genero`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
+
+--
+-- Volcado de datos para la tabla `GENEROS`
+--
+
+INSERT INTO `GENEROS` (`id_genero`, `genero`) VALUES
+(1, 'Accion'),
+(3, 'Animacion'),
+(2, 'Aventura'),
+(0, 'Belica'),
+(4, 'Biografia'),
+(10, 'Cine negro'),
+(5, 'Comedia'),
+(6, 'Crimen'),
+(7, 'Documental'),
+(8, 'Drama'),
+(20, 'Fantasia'),
+(21, 'Historica'),
+(12, 'Horror'),
+(14, 'Misterio'),
+(13, 'Musical'),
+(15, 'Romance'),
+(16, 'Sci-Fi'),
+(17, 'Thriller'),
+(19, 'Western');
 
 -- --------------------------------------------------------
 
