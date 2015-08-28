@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 12-03-2015 a las 22:45:30
--- Versión del servidor: 5.6.19-0ubuntu0.14.04.1
--- Versión de PHP: 5.5.9-1ubuntu4.6
+-- Tiempo de generación: 28-08-2015 a las 20:52:28
+-- Versión del servidor: 5.5.44-0ubuntu0.14.04.1
+-- Versión de PHP: 5.5.28-1+deb.sury.org~trusty+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,44 +23,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `GENEROS`
---
-
-CREATE TABLE IF NOT EXISTS `GENEROS` (
-  `id_genero` int(11) NOT NULL AUTO_INCREMENT,
-  `genero` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`id_genero`),
-  KEY `genero` (`genero`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
-
---
--- Volcado de datos para la tabla `GENEROS`
---
-
-INSERT INTO `GENEROS` (`id_genero`, `genero`) VALUES
-(1, 'Accion'),
-(3, 'Animacion'),
-(2, 'Aventura'),
-(0, 'Belica'),
-(4, 'Biografia'),
-(10, 'Cine negro'),
-(5, 'Comedia'),
-(6, 'Crimen'),
-(7, 'Documental'),
-(8, 'Drama'),
-(20, 'Fantasia'),
-(21, 'Historica'),
-(12, 'Horror'),
-(14, 'Misterio'),
-(13, 'Musical'),
-(15, 'Romance'),
-(16, 'Sci-Fi'),
-(17, 'Thriller'),
-(19, 'Western');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `PELICULAS`
 --
 
@@ -74,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `PELICULAS` (
   PRIMARY KEY (`id_pelicula`),
   KEY `fk_generos` (`id_genero`),
   KEY `titulo` (`titulo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=249 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=259 ;
 
 --
 -- Volcado de datos para la tabla `PELICULAS`
@@ -328,7 +290,16 @@ INSERT INTO `PELICULAS` (`id_pelicula`, `titulo`, `year`, `duracion`, `director`
 (245, 'El Hobbit: La desolaciÃ³n de Smaug (ext.)', 2013, 186, 'Peter Jackson', 20),
 (246, 'Conan, el bÃ¡rbaro', 1982, 129, 'John Milius', 20),
 (247, 'Amadeus', 1984, 160, 'Milos Forman', 4),
-(248, 'El show de Truman', 1998, 103, 'Peter Weir', 8);
+(248, 'El show de Truman', 1998, 103, 'Peter Weir', 8),
+(249, 'Shangai Kid', 2000, 110, 'Tom Dey', 5),
+(250, 'Los rebeldes de Shangai', 2003, 114, 'David Dobkin', 5),
+(251, 'Up', 2009, 96, 'Pete Docter, Bob Peterson', 3),
+(252, 'Wall-E', 2008, 98, 'Andrew Stanton', 3),
+(253, 'Eduardo Manostijeras', 1990, 105, 'Tim Burton', 20),
+(255, 'CÃ³mo entrenar a tu dragÃ³n 2', 2014, 102, 'Dean DeBlois', 3),
+(256, '1408', 2007, 104, 'Mikael HÃ¥fstrÃ¶m', 12),
+(257, 'Stargate', 1994, 121, 'Roland Emmerich', 16),
+(258, 'Super 8', 2011, 112, 'J.J. Abrams', 16);
 
 --
 -- Restricciones para tablas volcadas
