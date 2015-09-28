@@ -71,11 +71,11 @@
                     </div>
                 </form>
 
-                <table id="tabla-resultados"> 
-                    <thead> 
-                        <tr> 
-                            <th width="300">Título</th>  
-                            <th width="200">Director</th> 
+                <table id="tabla-resultados">
+                    <thead>
+                        <tr>
+                            <th width="300">Título</th>
+                            <th width="200">Director</th>
                             <th width="100">Año</th>
                             <th width="100">Duración</th>
                         </tr>
@@ -93,18 +93,18 @@
         		$('#keyword').on('input', function() {
 
         			var searchKeyword = $(this).val();
-                    
-                    data = {"keywords": searchKeyword};
-    				
-                    if (searchKeyword.length >= 1) {
+
+               data = {"keywords": searchKeyword};
+
+               if (searchKeyword.length >= 1) {
 						$.post('busqueda-ajax.php', data, function(data) {
 							$('#tabla-resultados tbody').empty();
 							$.each(data, function() {
-								$('#tabla-resultados tbody').append('<tr><td>' + this.titulo + '</td><td>' + this.director + '</td><td>' + this.year + '</td><td>' + this.duracion + '</td></tr>');
+                        $('#tabla-resultados tbody').append('<tr><td>' + this.titulo + '</td><td>' + this.director + '</td><td>' + this.year + '</td><td>' + this.duracion + '</td></tr>');
 							});
 						}, "json");
 					}
-                    
+
         		});
         	});
         </script>
